@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <object th:include="fragment/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragment/fragment :: js" th:remove="tag"></object>
+</head>
+<body>
+<nav th:replace="fragment/fragment :: navbar"></nav>
+	<br>
+    <div class="row justify-content-center">
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Data berhasil ditambahkan!</h4>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <a class="btn btn-primary btn-lg" href="/" role="button">Back Home</a>
+    </div>
+</body>
+</html>

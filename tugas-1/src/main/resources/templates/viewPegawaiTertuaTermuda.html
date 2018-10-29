@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Home</title>
+		<object th:include="fragment/fragment :: css" th:remove="tag"></object>
+		<object th:include="fragment/fragment :: js" th:remove="tag"></object>
+	</head>
+	<body>
+		<nav th:replace="fragment/fragment :: navbar"></nav>
+		<div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Data Pegawai Termuda</h3>
+                <table class="table-bordered table-responsive-md table-striped">
+                    <tr>
+                        <td height="30" width="300">NIP</td>
+                        <td th:text="${muda.nip}"></td>
+                    </tr>
+                    <tr>
+                        <td height="30">Nama</td>
+                        <td th:text="${muda.nama}"></td>
+                    </tr>
+                    <tr>
+                        <td height="30">Tempat Lahir</td>
+                        <td th:text="${muda.tempatLahir}"></td>
+                    </tr>
+                    <tr>
+                        <td height="30">Tanggal Lahir</td>
+                        <td th:text="${muda.tanggalLahir}"></td>
+                    </tr>
+                    <tr>
+                        <td height="30">Tahun Masuk</td>
+                        <td th:text="${muda.tahunMasuk}"></td>
+                    </tr>
+                    <tr>
+                        <td height="30">Nama Instansi</td>
+                        <td th:text="${muda.instansi.nama}"></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: top;" height="30">Jabatan</td>
+                        <td style="vertical-align: top;">
+                            <ul th:each="jabatanPegawaiTermuda : ${jabatanPegawaiTermuda}">
+                                <li><p th:text="${jabatanPegawaiTermuda.nama}"></p></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col-md-6">
+                <h3>Data Pegawai Tertua</h3>
+                <table class="table-bordered table-responsive-md table-striped">
+                    <tr>
+                        <td height="30" width="300">NIP</td>
+                        <td th:text="${tua.nip}"></td>
+                    </tr>
+                    <tr>
+                        <td height="30">Nama</td>
+                        <td th:text="${tua.nama}"></td>
+                    </tr>
+                    <tr>
+                        <td height="30">Tempat Lahir</td>
+                        <td th:text="${tua.tempatLahir}"></td>
+                    </tr>
+                    <tr>
+                        <td height="30">Tanggal Lahir</td>
+                        <td th:text="${tua.tanggalLahir}"></td>
+                    </tr>
+                    <tr>
+                        <td height="30">Tahun Masuk</td>
+                        <td th:text="${tua.tahunMasuk}"></td>
+                    </tr>
+                    <tr>
+                        <td height="30">Nama Instansi</td>
+                        <td th:text="${tua.instansi.nama}"></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: top;" height="30">Jabatan</td>
+                        <td style="vertical-align: top;">
+                            <ul th:each="jabatanPegawaiTertua : ${jabatanPegawaiTertua}">
+                                <li><p th:text="${jabatanPegawaiTertua.nama}"></p></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

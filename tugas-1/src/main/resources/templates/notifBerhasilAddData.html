@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	
+<head>
+	<object th:include="fragment/fragment :: css" th:remove="tag"></object>
+	<object th:include="fragment/fragment :: js" th:remove="tag"></object>
+	<title>add</title>
+</head>
+
+<body>
+<nav th:replace="fragment/fragment :: navbar"></nav>
+	<div class="container-fluid">
+	<br>
+	<div class="alert alert-success">
+    <strong>Sukses!</strong> Data telah berhasil ditambahkan.
+  </div>
+</body>
+
+</html>

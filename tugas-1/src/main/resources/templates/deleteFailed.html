@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+	<title>delete</title>
+	<object th:include="fragment/fragment :: css" th:remove="tag"></object>
+	<object th:include="fragment/fragment :: js" th:remove="tag"></object>
+</head>
+	
+<body>
+	<nav th:replace="fragment/fragment :: navbar"></nav>
+	<div class="container-fluid">
+	<br>
+	<div class="alert alert-danger">
+    <strong>Data gagal dihapus!</strong> Terdapat pegawai yang sedang memegang jabatan ini.
+  	</div>
+	<br>
+	<br>
+</body>
+	
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+	<meta charset="UTF-8">
+	<title>Lihat</title>
+	<object th:include="fragment/fragment :: css" th:remove="tag"></object>
+	<object th:include="fragment/fragment :: js" th:remove="tag"></object>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+</head>
+
+<body>
+	<nav th:replace="fragment/fragment :: navbar"></nav>
+	<div class="container-fluid">
+	<br>
+               
+                        <table id="lihatJabatan" class="table table-hover text-centered" style="width100%">
+						    <thead>
+						      <tr>
+						        <th>Nama</th>
+						        <th>Deskripsi</th>
+						        <th>Gaji Pokok</th>
+						        <th>Jumlah Pegawai</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						    <div th:each="jabatan : ${listJabatan}">
+						      <tr>
+						        <td th:text="${jabatan.nama}"></td>
+						        <td th:text="${jabatan.deskripsi}"></td>
+						        <td th:text="${jabatan.gajiPokok}"></td>
+						        <td th:text="${jabatan.getJumlahPegawai()}"></td>
+						      </tr>
+						      
+						    </div>
+						    </tbody>
+					  </table>
+                    
+          
+		<br>
+	</div>
+	
+	<script>
+	$(document).ready( function () {
+	    $('#lihatJabatan').DataTable();
+	} );
+</script>
+
+</body>	
+
+
+</html>
+
